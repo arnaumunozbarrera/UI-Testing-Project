@@ -13,27 +13,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LateralTabSteps {
-	WebDriver driver;
+	WebDriver driver = HomePageSteps.getDriver();
 	
-	@Given("the user is in the index page2")
-	public void theUserIsInTheIndexPage() {
-		System.setProperty("webdriver.gecko.driver", "Drivers/geckodriver.exe");
-		driver = new FirefoxDriver();
-		driver.navigate().to("https://www.mediamarkt.es/es");
-	}
-	
+		
 	@When("the user clicks on menu")
 	public void theUserClicksOnMenu() {
-		//driver.findElement(By.id("pwa-consent-layer-accept-all-button")).click();
-	}
-	
-	@And("user accepted cookies")
-	public void userAcceptedCookies() {
-		
+		driver.findElement(By.id("mms-app-header-category-button")).click();
 	}
 	
 	@Then("the lateral tab info appears")
 	public void theLateralTabInfoAppears() {
-		//assertTrue(true);
+		assertTrue(true);
 	}
 }
