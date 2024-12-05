@@ -17,7 +17,7 @@ public class HomePageSteps {
 	static WebDriver driver;
 	
 	@Given("the user is in the index page")
-	public void theUserIsInTheIndexPage() {
+	public static void theUserIsInTheIndexPage() {
 		System.setProperty("webdriver.gecko.driver", "Drivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.navigate().to("https://www.mediamarkt.es/es");
@@ -30,6 +30,9 @@ public class HomePageSteps {
 	}
 	
 	public static WebDriver getDriver() {
+		if (driver == null) {
+			theUserIsInTheIndexPage();
+		}
 		return driver;
 	}
 }
