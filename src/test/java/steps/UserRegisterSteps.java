@@ -13,7 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class UserRegister {
+public class UserRegisterSteps {
 	WebDriver driver = HomePageSteps.getDriver();
 	
 	@When("the user clicks on register")
@@ -33,11 +33,6 @@ public class UserRegister {
 	
 	@When("the user completes register form correctly")
 	public void theUserCompletesRegisterFromCorrectly() {
-		
-	}
-	
-	@When("the user clicks on submit")
-	public void theUserClicksOnSubmit() {
 		
 	}
 	
