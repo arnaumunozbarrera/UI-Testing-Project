@@ -6,18 +6,16 @@ When the user clicks on user menu
 Then the lateral menu tab info appears
 
 Scenario: Show Login form
-Given the user clicks on user menu
+Given the lateral menu tab info appears
 When the user clicks on login
 Then the user login form appears
 
 Scenario: Show Login Error
 Given the user login form appears
 When the user completes form incorrectly
-And the user clicks on submit
-Then the user login message appears
+Then the user fatal login message appears
 
 Scenario: Show Login Success
 Given the user login form appears
 When the user completes form correctly
-And the user clicks on submit
-Then the user login message appears
+Then the user correct login message appears
