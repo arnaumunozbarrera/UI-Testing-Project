@@ -13,11 +13,9 @@ Then the user register form appears
 Scenario: Show Register Error
 Given the user register form appears
 When the user completes register form incorrectly
-And the user clicks on submit
 Then the user fatal register message appears
 
 Scenario: Show Register Success
 Given the user register form appears
 When the user completes register form correctly
-And the user clicks on submit
 Then the user verification register message appears
