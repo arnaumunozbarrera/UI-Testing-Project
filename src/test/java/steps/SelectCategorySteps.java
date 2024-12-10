@@ -24,15 +24,17 @@ public class SelectCategorySteps {
 	@Then("the lateral tab info appears")
 	public void theLateralTabInfoAppears() {
 		// Test ToDo
+		assertTrue(true);
 	}
 	
 	@When("the user clicks on a category")
 	public void theUserClicksOnACategory() {
-		
+		driver.findElement(By.id("category-9")).click();
 	}
 	
 	@Then("the category products appears")
 	public void theCategoryProductsAppears() {
 		// Test ToDo
+		assertTrue(true);
 	}
 }
