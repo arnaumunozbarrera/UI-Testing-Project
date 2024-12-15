@@ -21,21 +21,44 @@ public class SearchShopSteps {
 	
 	@When("the user clicks on shop button menu")
 	public void theUserClicksOnShopButtonMenu() {
+		//sc-f524209-0 kZZfSV
+		driver.findElement(By.xpath("//div[@class='sc-f524209-0 kZZfSV']")).click();		
 
 	}
 	
 	@Then("the shop location tab info appears")
 	public void theShopLocationTabInfoAppears() {
 		// Test ToDo
+		assertTrue(true);
 	}
 	
-	@When("the user enters a location")
-	public void theUserEntersLocation() {
+	@When("the user completes search by city")
+	public void theUserCompletesSearchByCity() {
+		driver.findElement(By.id(":r0:")).click();
+
+		WebElement city = driver.findElement(By.id(":r0:"));
+		city.clear();
+		city.sendKeys("Sabadell");
+		
+		driver.findElement(By.xpath("//button[@class='sc-2c264fcb-1 pqlAH' and @type='button' and @aria-disabled='false' and @translate='no' and @aria-label='Buscar']")).click();
+	}
+	
+	@When("the user completes search by postal code")
+	public void theUserCompletesSearchByPostalCode() {
+		
+		driver.findElement(By.id(":r0:")).click();
+
+		WebElement city = driver.findElement(By.id(":r0:"));
+		city.clear();
+		city.sendKeys("08223");
+		
+		driver.findElement(By.xpath("//button[@class='sc-2c264fcb-1 pqlAH' and @type='button' and @aria-disabled='false' and @translate='no' and @aria-label='Buscar']")).click();
 
 	}
 	
-	@Then("the shop address appears")
-	public void theShopAddressAppears(){
+	@Then("the shop info appears")
+	public void theShopInfoAppears(){
 		// Test ToDo
+		assertTrue(true);
 	}
 }
