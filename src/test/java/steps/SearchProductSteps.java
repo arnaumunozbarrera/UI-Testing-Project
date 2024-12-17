@@ -20,6 +20,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.time.Duration; // Importa la clase Duration
 
+
 public class SearchProductSteps {
 	
 	WebDriver driver = HomePageSteps.getDriver();
@@ -30,12 +31,12 @@ public class SearchProductSteps {
 		
 		WebElement search = driver.findElement(By.id("search-form"));
 		search.clear();
-		search.sendKeys("iphone 11");		
+		search.sendKeys("ordenador");		
 	}
 	
 	@When("the user clicks on submit product search")
 	public void theUserClicksOnSubmitProductSearch() {
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[2]/div/div/form/div/div/div/button")).click();
+		driver.findElement(By.xpath("//button[@class='sc-2c264fcb-1 cgnsBc sc-d2a9f86e-0 chJTmY' and @type='button' and @aria-disabled='false' and @translate='no' and @height='48' and @width='48' and @aria-label='Busca en']")).click();
 	}
 	
 	@Then("product result list appears")
@@ -52,9 +53,9 @@ public class SearchProductSteps {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, 600);");
 		// 600, document.body.scrollHeight
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[3]/div[2]/div/div/div/a")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='sc-2fa46f1d-1 hHoKle sc-66851cef-0 dEaRKk' and @data-test='mms-product-list-item-link' and @href='/es/product/_pc-sobremesa-hp-m01-f3002ns-amd-ryzentm-3-5300g-8gb-ram-512gb-ssd-amd-radeontm-w11-h-negro-1560381.html' and @target='_self']")));
 
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[3]/div[2]/div/div/div/a")).click();
+		driver.findElement(By.xpath("//a[@class='sc-2fa46f1d-1 hHoKle sc-66851cef-0 dEaRKk' and @data-test='mms-product-list-item-link' and @href='/es/product/_pc-sobremesa-hp-m01-f3002ns-amd-ryzentm-3-5300g-8gb-ram-512gb-ssd-amd-radeontm-w11-h-negro-1560381.html' and @target='_self']")).click();
 	}
 	
 	@Then("the product detail info appears")
