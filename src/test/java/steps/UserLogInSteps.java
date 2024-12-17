@@ -1,5 +1,6 @@
 package steps;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.sql.DriverManager;
@@ -24,8 +25,11 @@ public class UserLogInSteps {
 	
 	@Then("the lateral menu tab info appears")
 	public void theLateralTabInfoAppears() {
-		// Test ToDo
-		assertTrue(true);
+		WebElement tab = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[4]/div/div/div/div/div[2]"));
+		assertTrue(tab != null);
+		
+		String span = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[4]/div/div/div/div/div[2]/div[2]/div/div/a/span[2]")).getText();
+		assertEquals(span, "Regístrate con tu Identificador miMediaMarkt");
 	}
 	
 	@When("the user clicks on login")
@@ -35,8 +39,14 @@ public class UserLogInSteps {
 	
 	@Then("the user login form appears")
 	public void theUserLogInFormAppears(){
-		// Test ToDo
-		assertTrue(true);
+		WebElement form = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div"));
+		assertTrue(form != null);
+		
+		String title = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div/div[2]/form/h1")).getText();
+		
+		assertTrue(title != null);
+		
+		assertEquals(title, "¿Ya estás registrado?");
 	}
 	
 	@When("the user completes form incorrectly")
@@ -57,8 +67,13 @@ public class UserLogInSteps {
 	
 	@Then("the user fatal login message appears")
 	public void theUserFatalLogInMessageAppears() {
+		
 		// Test ToDo
-		assertTrue(true);
+		WebElement error = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div/div[2]/form/div[1]/div[2]/div/div[2]/div/div[2]/p"));
+		assertTrue(error != null);
+
+		String errorMsg = error.getText();
+		assertEquals(errorMsg, "");	
 	}
 	
 	@When("the user completes form correctly")
@@ -83,6 +98,10 @@ public class UserLogInSteps {
 	@Then("the user correct login message appears")
 	public void theUserCorrectLoginMessageAppears() {
 		// Test ToDo
-		assertTrue(true);
+		WebElement correct = driver.findElement(By.xpath(""));
+		assertTrue(correct != null);
+
+		String correctMsg = correct.getText();
+		assertEquals(correctMsg, "");
 	}
 }
