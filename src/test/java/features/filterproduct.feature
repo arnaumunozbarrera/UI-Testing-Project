@@ -11,6 +11,4 @@ Given the product result list1 appears
 When the user clicks on filter1 button 
 And the user clicks on filter2 button 
 And the user clicks on filter3 button 
-And the user clicks on filter4 button 
-And the user clicks on filter5 button 
 Then the new product result list appears
