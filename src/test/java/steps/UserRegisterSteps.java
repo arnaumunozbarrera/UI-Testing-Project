@@ -1,5 +1,6 @@
 package steps;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.sql.DriverManager;
@@ -24,14 +25,16 @@ public class UserRegisterSteps {
 	
 	@Then("the user register form appears")
 	public void theUserRegisterFormAppears(){
-		//WebElement form = driver.findElement(By.xpath(
-			//        "//form[@aria-label='Formulario de inscripción Paso 1 - Correo electrónico' " +
-			  //      "and @data-test='mms-myacc-registration-email-form' and @method='post' and @novalidate='']"
-			    //));
-	    //assertTrue(form != null);
 		
 		// Test ToDo
-		assertTrue(true);
+		WebElement form = driver.findElement(By.xpath("//*[@id=\"main-content\"]"));
+		assertTrue(form != null);
+		
+		//String title = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div[2]/form/h1")).getText();
+		
+		//assertTrue(title != null);
+		
+		//assertEquals(title, "¿Nuevo cliente?");
 	}
 	
 	@When("the user completes register form incorrectly")
@@ -48,12 +51,12 @@ public class UserRegisterSteps {
 	
 	@Then("the user fatal register message appears")
 	public void theUserFatalRegisterMessageAppears() {
-		//String msg = driver.findElement(By.xpath("//p[@font-family='default' and @color='#3a3a3a' "
-			//	+ "and @font-size='xs' and @data-test='email__error']")).getText();
-		//assertTrue(msg.contains("Por favor, añade un correo electrónico válido."));
-		
 		// Test ToDo
-		assertTrue(true);
+		WebElement error = driver.findElement(By.xpath(""));
+		assertTrue(error != null);
+
+		String errorMsg = error.getText();
+		assertEquals(errorMsg, "");
 	}
 	
 	@When("the user completes register form correctly")
@@ -71,6 +74,10 @@ public class UserRegisterSteps {
 	@Then("the user verification register message appears")
 	public void theUserVerificationRegisterMessageAppears() {
 		// Test ToDo
-		assertTrue(true);
+		WebElement verification = driver.findElement(By.xpath(""));
+		assertTrue(verification != null);
+
+		String verificationMsg = verification.getText();
+		assertEquals(verificationMsg, "");
 	}
 }
