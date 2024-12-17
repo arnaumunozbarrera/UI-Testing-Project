@@ -41,8 +41,14 @@ public class HomePageSteps {
 		WebElement div3 = driver.findElement(By.id("mms-app-root"));
 		assertTrue(div3 != null);
 		
-		WebElement div4 = driver.findElement(By.id("mms-consent-portal-container"));
-		assertTrue(div4 != null);
+		WebElement categories = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/section[1]/div[1]/div/div/h2"));
+		assertEquals(categories.getText(), "Categorías destacadas");
+		
+		WebElement basedOnNavigation = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/div[2]/div/section/div/div/div[1]/h2"));
+		assertEquals(basedOnNavigation.getText(), "Basado en tu navegación");
+		
+		WebElement promotions = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/section[2]/div[1]/div/div/h2"));
+		assertEquals(promotions.getText(), "Promociones destacadas");
 		
 	}
 	
