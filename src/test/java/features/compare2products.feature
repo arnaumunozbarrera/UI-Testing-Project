@@ -4,10 +4,10 @@ Scenario: Search products to compare
 Given the user is in the index page
 When the user clicks on search bar button
 And the user clicks on submit product search
-Then product result list appears
+Then the product result list1 appears
 
 Scenario: Add products to compare
-Given the product result list appears
+Given the product result list1 appears
 When the user clicks on compare button for product1
 And the user clicks on compare button for product2
 Then the compare now option appears
