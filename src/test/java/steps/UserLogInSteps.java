@@ -4,11 +4,14 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.sql.DriverManager;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -25,6 +28,9 @@ public class UserLogInSteps {
 	
 	@Then("the lateral menu tab info appears")
 	public void theLateralTabInfoAppears() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12)); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[4]/div/div/div/div/div[2]")));
+		
 		WebElement tab = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[4]/div/div/div/div/div[2]"));
 		assertTrue(tab != null);
 		
@@ -39,6 +45,9 @@ public class UserLogInSteps {
 	
 	@Then("the user login form appears")
 	public void theUserLogInFormAppears(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12)); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div")));
+		
 		WebElement form = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div"));
 		assertTrue(form != null);
 		
@@ -57,6 +66,8 @@ public class UserLogInSteps {
 		email.clear();
 		email.sendKeys("wrongemail");
 		
+		driver.findElement(By.id("password")).click();
+
 		WebElement password = driver.findElement(By.id("password"));
 		password.clear();
 		password.sendKeys("1234");
@@ -67,13 +78,15 @@ public class UserLogInSteps {
 	
 	@Then("the user fatal login message appears")
 	public void theUserFatalLogInMessageAppears() {
+				
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6)); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div/div[2]/form/div[2]/div[1]/div[2]/p/span")));
 		
-		// Test ToDo
-		WebElement error = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div/div[2]/form/div[1]/div[2]/div/div[2]/div/div[2]/p"));
+		WebElement error = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div/div[2]/form/div[2]/div[1]/div[2]/p/span"));
 		assertTrue(error != null);
 
 		String errorMsg = error.getText();
-		assertEquals(errorMsg, "");	
+		assertEquals(errorMsg, "Lamentablemente, ha habido un error en el inicio de sesión. Asegúrate de que estás utilizando la dirección de correo electrónico y la contraseña correctas.");	
 	}
 	
 	@When("the user completes form correctly")
@@ -97,11 +110,13 @@ public class UserLogInSteps {
 	
 	@Then("the user correct login message appears")
 	public void theUserCorrectLoginMessageAppears() {
-		// Test ToDo
-		WebElement correct = driver.findElement(By.xpath(""));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2)); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[2]")));
+		
+		WebElement correct = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[4]/button"));
 		assertTrue(correct != null);
 
-		String correctMsg = correct.getText();
-		assertEquals(correctMsg, "");
+		String correctMsg = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[1]/header/div/div/div[1]/div[4]/button/p/span")).getText();
+		assertEquals(correctMsg, "AM");
 	}
 }
