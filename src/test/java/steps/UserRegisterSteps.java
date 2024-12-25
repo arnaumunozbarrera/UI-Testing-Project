@@ -57,7 +57,6 @@ public class UserRegisterSteps {
 	
 	@Then("the user fatal register message appears")
 	public void theUserFatalRegisterMessageAppears() {
-		// Test ToDo
 		WebElement error = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[2]/div/div[2]/form/div[2]/div/div[2]/div/div[2]/p"));
 		assertTrue(error != null);
 
