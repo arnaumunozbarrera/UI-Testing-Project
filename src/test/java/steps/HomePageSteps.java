@@ -49,7 +49,6 @@ public class HomePageSteps {
 		
 		WebElement promotions = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/section[2]/div[1]/div/div/h2"));
 		assertEquals(promotions.getText(), "Promociones destacadas");
-		
 	}
 	
 	public static WebDriver getDriver() {
