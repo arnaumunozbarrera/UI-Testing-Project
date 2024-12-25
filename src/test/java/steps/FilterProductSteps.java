@@ -23,7 +23,7 @@ import io.cucumber.java.en.When;
 import java.time.Duration;
 
 public class FilterProductSteps {
-	// Classe que testeja el filtres que apareixen a la pàgina web a la part lateral esquerra pels productes cercats
+	  //Classe que testeja el filtres que apareixen a la pàgina web a la part lateral esquerra pels productes cercats
 	
 	WebDriver driver = HomePageSteps.getDriver();
 	
@@ -60,7 +60,7 @@ public class FilterProductSteps {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12)); 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("facet-Categoría-5")));
 
-		//driver.findElement(By.id("Reacondicionado-promotions")).click();
+		driver.findElement(By.id("Reacondicionado-promotions")).click();
 		WebElement checkbox = driver.findElement(By.id("Reacondicionado-promotions"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", checkbox);
@@ -71,7 +71,7 @@ public class FilterProductSteps {
 	public void theUserClicksOnFilter2Button() {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(
-	        By.xpath("//button[@class='sc-dc935540-0 iWdMCq' and @aria-label='Quitar filtro Campañas destacadas: Reacondicionado' and @title='Quitar filtro Campañas destacadas: Reacondicionado' and @data-test='mms-clear-filter']")
+	        By.xpath("button[@class='sc-dc935540-0 iWdMCq' and @aria-label='Quitar filtro Campañas destacadas: Reacondicionado' and @title='Quitar filtro Campañas destacadas: Reacondicionado' and @data-test='mms-clear-filter']")
 	    ));
 	   
 	   	WebElement checkbox = driver.findElement(By.id("A_prueba_de_salpicaduras-specialty"));
@@ -86,7 +86,7 @@ public class FilterProductSteps {
 	public void theUserClicksOnFilter3Button() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(
-	        By.xpath("//button[@class='sc-dc935540-0 iWdMCq' and @aria-label='Quitar filtro Especificaciones: A prueba de salpicaduras' and @title='Quitar filtro Especificaciones: A prueba de salpicaduras' and @data-test='mms-clear-filter']")
+	        By.xpath("button[@class='sc-dc935540-0 iWdMCq' and @aria-label='Quitar filtro Especificaciones: A prueba de salpicaduras' and @title='Quitar filtro Especificaciones: A prueba de salpicaduras' and @data-test='mms-clear-filter']")
 	    ));
 	   
 	   	WebElement checkbox = driver.findElement(By.id("MediaMarkt-marketplace"));
@@ -103,45 +103,45 @@ public class FilterProductSteps {
 		assertTrue(title1 != null);
 		
 		String title1Msg = title1.getText();
-		assertTrue(title1Msg.contains("1 Resultado de la búsqueda para iphone 11"));
+		 assertTrue(title1Msg.contains("1 Resultado de la búsqueda para iphone 11"));
 		
 		WebElement filter1 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/aside/div/section/ul/li[2]/div[2]/div/div/div/div/div[1]/div/label/p"));
 		assertTrue(filter1 != null);
 		
-		assertEquals(filter1.getText(), "Reacondicionado (1)");
+		 assertEquals(filter1.getText(), "Reacondicionado (1)");
 		
 		WebElement filter2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/aside/div/section/ul/li[3]/div[2]/div/div/div/div/div[1]/div/label/p"));
 		assertTrue(filter2 != null);
 		
-		assertEquals(filter2.getText(),"A prueba de salpicaduras (1)");
+		 assertEquals(filter2.getText(),"A prueba de salpicaduras (1)");
 		
-		WebElement filter3 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/aside/div/section/ul/li[4]/div[2]/div/div/div/div/div/div/label/p"));
-		assertTrue(filter3 != null);
+		 WebElement filter3 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/aside/div/section/ul/li[4]/div[2]/div/div/div/div/div/div/label/p"));
+		 assertTrue(filter3 != null);
 		
-		//assertEquals(filter3.getText(), "MediaMarkt (1)");
+		 assertEquals(filter3.getText(), "MediaMarkt (1)");
 		
-		WebElement btn1 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[2]"));
-		assertTrue(btn1 != null);
+		 WebElement btn1 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[2]"));
+		 assertTrue(btn1 != null);
 		
-		String btn1Msg = btn1.getText();
-		assertEquals(btn1Msg, "Campañas destacadas: Reacondicionado");
+		 String btn1Msg = btn1.getText();
+		 assertEquals(btn1Msg, "Campañas destacadas: Reacondicionado");
 		
-		WebElement btn2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[3]"));
-		assertTrue(btn2 != null);
+		 WebElement btn2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[3]"));
+		 assertTrue(btn2 != null);
 		
-		String btn2Msg = btn2.getText();
-		assertEquals(btn2Msg, "Especificaciones: A prueba de salpicaduras");
+		 String btn2Msg = btn2.getText();
+		 assertEquals(btn2Msg, "Especificaciones: A prueba de salpicaduras");
 		
-		WebElement btn3 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[4]"));
-		assertTrue(btn3 != null);
+		 WebElement btn3 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[4]"));
+		 assertTrue(btn3 != null);
 		
-		String btn3Msg = btn3.getText();
-		assertEquals(btn3Msg, "Vendedor: MediaMarkt");	
+		 String btn3Msg = btn3.getText();
+		 assertEquals(btn3Msg, "Vendedor: MediaMarkt");	
 		
-		WebElement btn4 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[1]"));
-		assertTrue(btn4 != null);
+		 WebElement btn4 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[1]/aside/button[1]"));
+		 assertTrue(btn4 != null);
 		
-		String btn4Msg = btn4.getText();
-		assertEquals(btn4Msg, "Borrar todo");	
+		 String btn4Msg = btn4.getText();
+		 assertEquals(btn4Msg, "Borrar todo");	
 	}
 }
