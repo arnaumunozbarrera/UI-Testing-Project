@@ -25,9 +25,7 @@ public class SearchShopSteps {
 	
 	@When("the user clicks on shop button menu")
 	public void theUserClicksOnShopButtonMenu() {
-		//sc-f524209-0 kZZfSV
 		driver.findElement(By.xpath("//div[@class='sc-f524209-0 kZZfSV']")).click();		
-
 	}
 	
 	@Then("the shop location tab info appears")
