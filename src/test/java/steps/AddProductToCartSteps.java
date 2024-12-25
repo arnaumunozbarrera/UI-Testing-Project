@@ -27,17 +27,13 @@ public class AddProductToCartSteps {
 	public void theUserClicksOnAddToCartButton() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6)); 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/div[4]/div/div/div[3]/div")));
-		
-		//driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/div[4]/div/div/div[3]/div")).click();
-		
+				
 		WebElement checkbox = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/div[4]/div/div/div[3]/div"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", checkbox);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/div[4]/div/div/div[3]/div/button")));
-		
-		//driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/div[4]/div/div/div[3]/div/button")).click();
-		
+			
 		WebElement checkbox2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/div[4]/div/div/div[3]/div/button"));
 		js.executeScript("arguments[0].click();", checkbox2);
 
@@ -51,21 +47,19 @@ public class AddProductToCartSteps {
 		WebElement tab = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]"));
 		assertTrue(tab != null);
 		
+		WebElement title = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[1]/div/div/h3"));
+		assertTrue(title != null);
 		
-		//WebElement title = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[1]/div/div/h3"));
-		//assertTrue(title != null);
+		assertEquals(title.getText(),"Su producto fue añadido con éxito al carrito");
 		
-		//assertEquals(title.getText(),"Su producto fue añadido con éxito al carrito");
+		WebElement more = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[2]/div/div[2]/div[1]"));
+		assertTrue(more != null);
 		
-		//WebElement more = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[2]/div/div[2]/div[1]"));
-		//assertTrue(more != null);
-		
-		//assertEquals(more.getText(), "También puede interesarte");
+		assertEquals(more.getText(), "También puede interesarte");
 	}
 	
 	@When("the user click on go to cart button")
 	public void theUserClicksOnGoToCartButton() {
-		//btn /html/body/div[1]/div[3]/div[4]/div[2]/div[3]/div[2]/button[2]
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8)); 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[3]/div[2]")));
 		
@@ -106,13 +100,8 @@ public class AddProductToCartSteps {
 	public void theUserClickOnKeepShoppingButton() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8)); 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[3]/div[2]")));
-		
-		//driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[3]/div[2]/button[1]")).click();
-		
-		//WebElement checkbox = 
+
 		driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div[2]/div[3]/div[2]/button[1]")).click();
 
-	   	//JavascriptExecutor js = (JavascriptExecutor) driver;
-	    //js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", checkbox);
 	}
 }
