@@ -39,13 +39,12 @@ public class Compare2ProductsSteps {
 	@When("the user clicks on compare button for product2")
 	public void theUserClicksOnCompareButtonProd2() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
-	    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flyout-description")));
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(
 			    By.xpath("//a[@data-test='mms-product-comparison-flyout-go-to' and contains(@href, 'product-comparison')]"), 
 			    "Comparar ahora (1)"
 			));
 	   
-	   	WebElement checkbox2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[3]/div[4]/div/div/div/div[6]/div/div/div/div/label"));
+	   	WebElement checkbox2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div/div[4]/div[2]/div/div/div/div[7]/div/div/div/div/label"));
 
 	   	JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", checkbox2);
@@ -66,17 +65,17 @@ public class Compare2ProductsSteps {
 		WebElement opt1 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[1]/ul/li[1]/div/a/div/span"));
 		assertTrue(opt1 != null);
 		
-		//assertEquals(opt1.getText(), "1. Móvil - APPLE iPhone 11, Blanco, 64 GB, 4 GB RAM, 6,1 \", LCD,Anti-huellas, A13 Bionic, 3110 mAh, iOS 13");
+		assertEquals(opt1.getText(), "1. Móvil - APPLE iPhone 11, Blanco, 64 GB, 4 GB RAM, 6,1 \", LCD,Anti-huellas, A13 Bionic, 3110 mAh, iOS 13");
 		
 		WebElement opt2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[1]/ul/li[2]/div/a/div/span"));
 		assertTrue(opt2 != null);
 		
-		//assertEquals(opt2.getText(), "2. Móvil - APPLE iPhone 11, Negro, 128 GB, 4 GB RAM, 6,1 \", Flüssiges Retina,Recubrimiento oleofóbico,Anti-huellas, A13 Bionic, iOS 13");
+		assertEquals(opt2.getText(), "2. Móvil - APPLE iPhone 11, Negro, 128 GB, 4 GB RAM, 6,1 \", Flüssiges Retina,Recubrimiento oleofóbico,Anti-huellas, A13 Bionic, iOS 13");
 	
-		//WebElement recomendations = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[1]/button/span"));
-		//assertTrue(recomendations != null);
+		WebElement recomendations = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[1]/button/span"));
+		assertTrue(recomendations != null);
 		
-		//assertEquals(recomendations.getText(), "Recomendaciones");
+		assertEquals(recomendations.getText(), "Recomendaciones");
 		
 		WebElement buyNow = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[2]/a"));
 		assertTrue(buyNow != null);
@@ -93,12 +92,12 @@ public class Compare2ProductsSteps {
 		    "Comparar ahora (2)"
 		));
 
-	   	//WebElement btn = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[2]"));
+	   	WebElement btn = driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[2]"));
 
-	   	//JavascriptExecutor js = (JavascriptExecutor) driver;
-	    //js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", btn);
+	   	JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", btn);
 
-	    //js.executeScript("arguments[0].click();", btn);
+	    js.executeScript("arguments[0].click();", btn);
 		
 		driver.findElement(By.xpath("/html/body/div[1]/div[3]/aside/div/div[1]/div/div[2]")).click();
 	}
@@ -112,10 +111,10 @@ public class Compare2ProductsSteps {
 		WebElement comparison = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section"));
 		assertTrue(comparison != null);
 		
-		//WebElement title = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/div[1]/div/div[1]/h1"));
-		//assertTrue(title != null);
+		WebElement title = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/div[1]/div/div[1]/h1"));
+		assertTrue(title != null);
 		
-		//assertEquals(title.getText(), "Comparación de productos");
+		assertEquals(title.getText(), "Comparación de productos");
 		
 		WebElement btn1 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/div[1]/div/div[2]/div/div[1]/div/button/p"));
 		assertTrue(btn1 != null);
@@ -146,7 +145,6 @@ public class Compare2ProductsSteps {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[3]/main/section/div[1]/div/div[1]")));
 	    
-	    //button    /html/body/div[1]/div[3]/main/section/div[4]/aside/div/div/button
 		WebElement btn = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/div[4]/aside/div/div/button"));
 
 	   	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -159,9 +157,7 @@ public class Compare2ProductsSteps {
 	public void theUserClickOnConfirmExitComparison() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mms-styled-modal-inner-wrapper")));
-	    
-		// button    /html/body/div[1]/div[1]/div/div[2]/div[4]/div[2]/button
-	    
+	    	    
 	    WebElement btn = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div[2]/div[4]/div[2]/button"));
 
 	   	JavascriptExecutor js = (JavascriptExecutor) driver;
