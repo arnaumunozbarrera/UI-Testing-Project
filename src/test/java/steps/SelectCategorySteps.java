@@ -23,8 +23,8 @@ public class SelectCategorySteps {
 	
 	@Then("the lateral tab info appears")
 	public void theLateralTabInfoAppears() {
-		// Test ToDo
-		assertTrue(true);
+		WebElement element = driver.findElement(By.id("category-9"));
+		assertTrue(element != null);
 	}
 	
 	@When("the user clicks on a category")
@@ -34,7 +34,7 @@ public class SelectCategorySteps {
 	
 	@Then("the category products appears")
 	public void theCategoryProductsAppears() {
-		// Test ToDo
-		assertTrue(true);
+		WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/section/section/div/div[1]/div/div/div[2]/h1"));
+		assertTrue(element != null);
 	}
 }
