@@ -41,8 +41,8 @@ public class MakeAReviewSteps  {
 	
 	@Then("the product form review appears")
 	public void theProductFormReviewAppears(){
-		// Test ToDo
-		assertTrue(true);
+		WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div[2]/div[1]/div/h3"));
+		assertTrue(element != null);
 	}
 	
 	@When("the user fill out the form")
@@ -89,8 +89,8 @@ public class MakeAReviewSteps  {
 	
 	@Then("the review appears")
 	public void theReviewAppears(){
-		// Test ToDo
-		assertTrue(true);
+		WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[3]/main/div[1]/div/div/div"));
+		assertTrue(element != null);
 	}
 }
 
