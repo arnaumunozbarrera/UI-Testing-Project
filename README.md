@@ -1,4 +1,4 @@
-# UI-Testing-Project
+# UI Testing Project
 ### Autors: 
 Arnau Muñoz Barrera (1665982) &
 José Ortín López (1667573)
