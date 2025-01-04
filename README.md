@@ -20,7 +20,7 @@ some tests may fail due to the changes on the product database (articles can dis
 Also, due to being changed for special dates and moments, sometimes MediaMarkt show 2 variants of the same website, fact that we don't control on our test.
 The test code is only implemented for this distribution of the website's Home Page:
 
-Any other distribution will cause errors.
+Any other distribution will cause errors. To check the correct implementation, re-execute the tests until you get the correct distribution of the landing page.
 ![Distribution](distribution.png)
 
 
